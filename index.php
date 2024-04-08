@@ -195,6 +195,95 @@
 			</div>
 		</div>
 
+		<div class="responsive">
+			<div class="gallery">
+				<img class="blur" src="albums/vidlak.png">
+				<div>
+					<a href="#"><img src="albums/vidlak.png"></a>
+					<div class="play-icon" onclick="changeMusic('music/českorapská terapie (feat. lil vidlak).mp3')"></div>
+                </div>
+			  	<div class="desc">
+					<b>Beaver Boys (feat. lil vidlak) - Single</b><br>
+					<p>naxoyungpedo</p>
+				</div>
+			</div>
+		</div>
+
+		
+		<div class="responsive">
+			<div class="gallery">
+				<img class="blur" src="albums/Fluffing a Duck.png">
+				<div>
+					<a href="#"><img src="albums/Fluffing a Duck.png"></a>
+					<div class="play-icon" onclick="changeMusic('music/Fluffing a Duck.mp3')"></div>
+                </div>
+			  	<div class="desc">
+					<b>Fluffing a Duck</b><br>
+					<p>Kevin MacLeod</p>
+				</div>
+			</div>
+		</div>
+
+		
+		<div class="responsive">
+			<div class="gallery">
+				<img class="blur" src="albums/vidlak.png">
+				<div>
+					<a href="#"><img src="albums/vidlak.png"></a>
+					<div class="play-icon" onclick="changeMusic('music/českorapská terapie (feat. lil vidlak).mp3')"></div>
+                </div>
+			  	<div class="desc">
+					<b>Beaver Boys (feat. lil vidlak) - Single</b><br>
+					<p>naxoyungpedo</p>
+				</div>
+			</div>
+		</div>
+
+		
+		<div class="responsive">
+			<div class="gallery">
+				<img class="blur" src="albums/Fluffing a Duck.png">
+				<div>
+					<a href="#"><img src="albums/Fluffing a Duck.png"></a>
+					<div class="play-icon" onclick="changeMusic('music/Fluffing a Duck.mp3')"></div>
+                </div>
+			  	<div class="desc">
+					<b>Fluffing a Duck</b><br>
+					<p>Kevin MacLeod</p>
+				</div>
+			</div>
+		</div>
+
+		
+		<div class="responsive">
+			<div class="gallery">
+				<img class="blur" src="albums/vidlak.png">
+				<div>
+					<a href="#"><img src="albums/vidlak.png"></a>
+					<div class="play-icon" onclick="changeMusic('music/českorapská terapie (feat. lil vidlak).mp3')"></div>
+                </div>
+			  	<div class="desc">
+					<b>Beaver Boys (feat. lil vidlak) - Single</b><br>
+					<p>naxoyungpedo</p>
+				</div>
+			</div>
+		</div>
+
+		
+		<div class="responsive">
+			<div class="gallery">
+				<img class="blur" src="albums/Fluffing a Duck.png">
+				<div>
+					<a href="#"><img src="albums/Fluffing a Duck.png"></a>
+					<div class="play-icon" onclick="changeMusic('music/Fluffing a Duck.mp3')"></div>
+                </div>
+			  	<div class="desc">
+					<b>Fluffing a Duck</b><br>
+					<p>Kevin MacLeod</p>
+				</div>
+			</div>
+		</div>
+
 		
 				
 
