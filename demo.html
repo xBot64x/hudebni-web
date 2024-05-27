@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body { 
+                margin: 0;
+                font-family: "UniversLTPro-Ex";
+                font-size: 30px;
+              }
+              
+              a {
+                  text-decoration: none;
+                  color: #000;
+              }
+              
+              .marquee {
+                height: 35px;
+                width: 100%;
+              
+                overflow: hidden;
+                position: relative;
+                background-color: #e9e5fb;  
+                border-top: 1px solid black;
+                border-bottom: 1px solid black;
+                padding: 8px 0 4px 0;
+              }
+              
+              
+              /* would need to be adjusted depending on time */
+              .marquee .marqueeone{
+                animation: marquee 20s linear infinite
+              }
+              
+              .marquee .marqueetwo{
+                animation: marquee 20s linear 5s infinite 
+              }
+              
+              .marquee .marqueethree{
+                animation: marquee 20s linear 10s infinite
+              }
+              
+              .marquee .marqueefour{
+                animation: marquee 20s linear 15s infinite
+              }
+              
+              /* even out the elements */
+              .marquee div {
+                position: absolute;
+                width: 100%;
+                left: 100%;
+                height: 40px;
+                display: flex;
+                justify-content: space-between;
+              }
+              
+              .marquee:hover div {
+                animation-play-state: paused;
+              }
+              
+              /* add delay at the end of animation so you dont start while another div is going */
+              @keyframes marquee {
+                0% { left: 100%; }
+                50% { left: -100%; }
+                100% {left: -100%}
+              }
+              
+              /* @import must be at top of file, otherwise CSS will not work */
+              @import url("//hello.myfonts.net/count/3909a7");
+              
+                
+              @font-face {font-family: 'UniversLTPro-Ex';src: url('webfonts/3909A7_0_0.eot');src: url('webfonts/3909A7_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/3909A7_0_0.woff2') format('woff2'),url('webfonts/3909A7_0_0.woff') format('woff'),url('webfonts/3909A7_0_0.ttf') format('truetype');}
+        </style>
+    </head>
+    <body>
+        <div class="marquee">
+            <div class="marqueeone"><a href="#">twitter</a>&nbsp;&nbsp;&nbsp;
+                <a href="#">instagram</a>&nbsp;&nbsp;&nbsp; 
+                <a href="#">pinterest</a>&nbsp;&nbsp;&nbsp;
+                <a href="#">spotify</a>&nbsp;&nbsp;&nbsp; 
+                <a href="#">magazine</a>&nbsp;&nbsp;&nbsp;
+            </div>
+            <div class="marqueetwo"><a href="#">twitter</a>&nbsp;&nbsp;&nbsp;
+                <a href="#">instagram</a>&nbsp;&nbsp;&nbsp; 
+                <a href="#">pinterest</a>&nbsp;&nbsp;&nbsp;
+                <a href="#">spotify</a>&nbsp;&nbsp;&nbsp; 
+                <a href="#">magazine</a>&nbsp;&nbsp;&nbsp;
+            </div>
+            <div class="marqueethree"><a href="#">twitter</a>&nbsp;&nbsp;&nbsp;
+                <a href="#">instagram</a>&nbsp;&nbsp;&nbsp; 
+                <a href="#">pinterest</a>&nbsp;&nbsp;&nbsp;
+                <a href="#">spotify</a>&nbsp;&nbsp;&nbsp; 
+                <a href="#">magazine</a>&nbsp;&nbsp;&nbsp;
+            </div>
+            <div class="marqueefour"><a href="#">twitter</a>&nbsp;&nbsp;&nbsp;
+                <a href="#">instagram</a>&nbsp;&nbsp;&nbsp; 
+                <a href="#">pinterest</a>&nbsp;&nbsp;&nbsp;
+                <a href="#">spotify</a>&nbsp;&nbsp;&nbsp; 
+                <a href="#">magazine</a>&nbsp;&nbsp;&nbsp;
+            </div>
+        </div>
+    </body>
+</html>
