@@ -3,6 +3,10 @@ var slider = document.getElementById("myRange");
 var volumeSlider = document.getElementById("myVolume");
 var loopvar = false;
 
+//set volume from local storage
+volumeSlider.value = localStorage.getItem("volume") * 100;
+audioPlayer.volume = localStorage.getItem("volume");
+
 document.addEventListener('DOMContentLoaded', function() {
   // Retrieve liked songs from localStorage
   var likedSongs = JSON.parse(localStorage.getItem('likedSongs')) || [];
@@ -17,8 +21,15 @@ document.addEventListener('DOMContentLoaded', function() {
       var artist = galleryItem.querySelector('.desc p').textContent;
     } 
     catch (error) {
-      var title = document.getElementById('titlef').innerHTML;
-      var artist = document.getElementById('artistf').innerHTML;
+      try {
+        var galleryItem = likeButton.closest('.skladbadiv');
+        var title = galleryItem.querySelector('.nazevskladbyspan').textContent;
+        var artist = galleryItem.querySelector('.artistspan').textContent;
+      } 
+      catch (error) {
+        var title = document.getElementById('titlef').innerHTML;
+        var artist = document.getElementById('artistf').innerHTML;
+      }
     }
 
     // Check if the current song is in the liked songs array
@@ -60,6 +71,7 @@ slider.addEventListener('input', function() {
 volumeSlider.addEventListener('input', function() {
   var volume = volumeSlider.value / 100;
   audioPlayer.volume = volume;
+  localStorage.setItem("volume", volume);
 });
 
 function changeMusic(source) {  
@@ -73,16 +85,10 @@ function changeMusic(source) {
   jsmediatags.read(window.location.origin + "/" + source, {
     onSuccess: function(tag) {
       console.log(tag)
-      // Array buffer to base64
-      const data = tag.tags.picture.data
-      const format = tag.tags.picture.format
-      let base64String = ""
-      for (let i = 0; i < data.length; i++) {
-        base64String += String.fromCharCode(data[i])
-      }
+
       // Output the metadata
       var albumCoverImg = document.getElementById('albumCover');
-      albumCoverImg.src = `data:${format};base64,${window.btoa(base64String)}`
+      albumCoverImg.src = `albums/${tag.tags.album}.jpg`
 
       var songTitleSpan = document.getElementById('songTitle');
       songTitleSpan.textContent = tag.tags.title
@@ -169,13 +175,15 @@ function noloop() {
   loopvar = false;
 }
 
-// vyhledávání na stránce
+// vyhledávání na stránce (search)
 function filterDivs() {
   // Get the input value
   var inputValue = document.querySelector('input[type="text"]').value.toLowerCase();
 
   // Get all div elements with the class "responsive"
   var divs = document.querySelectorAll('.responsive');
+
+  var longdivs = document.querySelectorAll('.skladbadiv');
 
   // Variable to track if any results are found
   var resultsFound = false;
@@ -189,6 +197,21 @@ function filterDivs() {
     if (textContent.includes(inputValue)) {
       // If yes, show the div
       div.style.display = 'block';
+      resultsFound = true; // Set flag to true
+    } else {
+      // If not, hide the div
+      div.style.display = 'none';
+    }
+  });
+
+  longdivs.forEach(function(div) {
+    // Get the text content of the div
+    var textContent = div.textContent.toLowerCase();
+
+    // Check if the input value is present in the div's text content
+    if (textContent.includes(inputValue)) {
+      // If yes, show the div
+      div.style.display = 'grid';
       resultsFound = true; // Set flag to true
     } else {
       // If not, hide the div
@@ -233,8 +256,15 @@ function likeSong(likeButton) {
     var artist = galleryItem.querySelector('.desc p').textContent;
   } 
   catch (error) {
-    var title = document.getElementById('titlef').innerHTML;
-    var artist = document.getElementById('artistf').innerHTML;
+    try {
+      var galleryItem = likeButton.closest('.skladbadiv');
+      var title = galleryItem.querySelector('.nazevskladbyspan').textContent;
+      var artist = galleryItem.querySelector('.artistspan').textContent;
+    } 
+    catch (error) {
+      var title = document.getElementById('titlef').innerHTML;
+      var artist = document.getElementById('artistf').innerHTML;
+    }
   }
   
   // Save the liked song to localStorage
@@ -254,8 +284,15 @@ function unlikeSong(likeButton) {
     var artist = galleryItem.querySelector('.desc p').textContent;
   } 
   catch (error) {
-    var title = document.getElementById('titlef').innerHTML;
-    var artist = document.getElementById('artistf').innerHTML;
+    try {
+      var galleryItem = likeButton.closest('.skladbadiv');
+      var title = galleryItem.querySelector('.nazevskladbyspan').textContent;
+      var artist = galleryItem.querySelector('.artistspan').textContent;
+    } 
+    catch (error) {
+      var title = document.getElementById('titlef').innerHTML;
+      var artist = document.getElementById('artistf').innerHTML;
+    }
   }
 
   // Retrieve liked songs from localStorage

@@ -9,8 +9,9 @@
     <ul class="sidebar">
         <li><input type="text" placeholder="najdu tam co neznám"></li>
         <li><a href="index.php"><img src="home.png">Domů</a></li>
+        <li><a href="skladby.php"><img src="list.png">Skladby</a></li>
         <li><a id="fullscreenLink" href="#"><img src="squares.png">Fullscreen</a></li>
-        <li><a href="library.php"><img src="list.png">Knihovna</a></li>
+        <li><a href="library.php"><img src="white-liked-icon.svg">Knihovna</a></li>
         <li><a href="info.php"><img src="info.png">Info</a></li>
     </ul>
 
@@ -44,9 +45,7 @@
         </li>
     </ul>
     
-    <audio id="audioPlayer" controls>
-        <source id="audioSource" src="path/to/your/song.mp3" type="audio/mpeg">
-    </audio>
+    <audio id="audioPlayer" controls></audio>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"></script>
 </body>

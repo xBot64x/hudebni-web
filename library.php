@@ -20,9 +20,6 @@
         // Include Composer's autoloader
         require_once 'vendor/autoload.php';
 
-        // Import the getID3 class
-        use getID3 as getID3;
-
         // Directory where your music files are stored
         $musicFolder = 'music';
 
@@ -30,6 +27,7 @@
         $songs = glob($musicFolder . '/*.mp3');
 
         // Loop through each song
+        $pass = 0;
         foreach ($songs as $song) {
             // Extract metadata using getID3
             $getID3 = new getID3();
@@ -39,25 +37,48 @@
             $title = $tags['tags']['id3v2']['title'][0] ?? 'Unknown Title';
             $artist = $tags['tags']['id3v2']['artist'][0] ?? 'Unknown Artist';
             $album = $tags['tags']['id3v2']['album'][0] ?? 'Unknown Album';
+            $playtime = $tags['playtime_string'] ?? '0:00';
 
-            if (isset($tags['comments']['picture'][0])) {
-                $coverImage = 'data:' . $tags['comments']['picture'][0]['image_mime'] . ';charset=utf-8;base64,' . base64_encode($tags['comments']['picture'][0]['data']);
+            $coverPath = 'LQ albums/' . $album . '.png';
+            if (file_exists($coverPath)){
+                $coverImage = $coverPath;
             }
+            else {
+                $coverImage = 'placeholder.png';
+            }
+            
+            
+
+            $link = substr($song, 6);
 
             // Generate HTML for each song
-            echo '<div class="responsive" data-title="' . htmlspecialchars($title) . '" data-artist="' . htmlspecialchars($artist) . '">';
-            echo '<div class="gallery">';
-            echo '<img class="blur" src="' . $coverImage . '">';
-            echo '<img src="' . $coverImage . '">';
-            echo '<div class="play-icon" onclick="changeMusic(\'music/' . htmlspecialchars(basename($song)) . '\')"></div>';
+            if ($pass % 2 == 0) {
+                echo '<div class="skladbadiv">';
+            }
+            else {
+                echo '<div class="skladbadiv skladbadiv2">';
+            }
             echo '<div class="like-icon" onclick="toggleLike(this)"></div>';
+            echo '<img class="coverskladba" src="' . $coverImage . '">';
+            echo '<div class="play-icon" onclick="changeMusic(\'music/' . htmlspecialchars(basename($song)) . '\')"></div>';
+
+            echo '<span class="nazevskladbyspan pc">' . htmlspecialchars($title) . '</span>';
+            echo '<a class="pc" href="artist.php?id=' . htmlspecialchars($artist) . '"><span class="artistspan">' . htmlspecialchars($artist) . '</span></a>';
+            echo '<a class="pc" href="album.php?id=' . htmlspecialchars($album) . '"><span>' . htmlspecialchars($album) . '</span></a>';
+
+            echo '<div class="mobil">';
+                echo '<span class="nazevskladbyspan">' . htmlspecialchars($title) . '</span>';
+                echo '<div>';
+                    echo '<a href="artist.php?id=' . htmlspecialchars($artist) . '"><span class="artistspan">' . htmlspecialchars($artist) . '</span></a> · ';
+                    echo '<a href="album.php?id=' . htmlspecialchars($album) . '"><span>' . htmlspecialchars($album) . '</span></a>';
+                echo '</div>';
+            echo '</div>';
+
+            echo '<span class="playtime">' . htmlspecialchars($playtime) . '</span>';
             echo '<a href="' . htmlspecialchars($song) . '" download="' . htmlspecialchars($title) . ' - ' . htmlspecialchars($artist) . '"><div class="download-icon"></div></a>';
-            echo '<div class="desc">';
-            echo '<b>' . htmlspecialchars($title) . '</b>';
-            echo '<p>' . htmlspecialchars($artist) . '</p>';
             echo '</div>';
-            echo '</div>';
-            echo '</div>';
+
+            $pass = $pass + 1;
         }
         ?>
         <div id="noResultsMessage" style="display: none;">Nenalezeny žádné výsledky</div>

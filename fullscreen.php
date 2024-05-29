@@ -38,14 +38,20 @@
         $album = $tags['tags']['id3v2']['album'][0] ?? 'Unknown Album';
         
         if(isset($tags['comments']['picture'][0])){
-            $coverImage='data:'.$tags['comments']['picture'][0]['image_mime'].';charset=utf-8;base64,'.base64_encode($tags['comments']['picture'][0]['data']);
+            $coverImage = 'data:'.$tags['comments']['picture'][0]['image_mime'].';charset=utf-8;base64,'.base64_encode($tags['comments']['picture'][0]['data']);
         }
 
         $link = substr($song, 6);
     ?>
+    <?php
+    $HDcover = "HD albums/$album.png";
+    if(file_exists($HDcover)){
+        $coverImage = $HDcover;
+    }
+    echo '<img class="fullscreenblur" src="' . $coverImage . '">';
+    echo '<img id="cover" src="' . $coverImage . '">';
+    ?>
 
-    <?php echo '<img class="fullscreenblur" src="' . $coverImage . '">'; ?>
-    <?php echo '<img id="cover" src="' . $coverImage . '">'; ?>
     <?php echo '<a href="' . htmlspecialchars($song) . '" download="' . htmlspecialchars($title) . ' - ' . htmlspecialchars($artist) . '"><div class="download-icon"></div></a>'; ?>
     
     <div class="controls">
@@ -60,6 +66,7 @@
             <input type="range" min="0" max="100" value="0" class="fullscreen" id="myRange">
             <span id="remainingTime">0:00</span>
         </div>
+
         <ul class="gaps">
             <li style="float:left;padding-left: 5px;">
                 <div class="like-icon" onclick="toggleLike(this)"></div>
@@ -74,6 +81,10 @@
                 <?php echo '<a href="' . htmlspecialchars($song) . '" download="' . htmlspecialchars($title) . ' - ' . htmlspecialchars($artist) .'"><div class="download-icon"></div></a>'; ?>
             </li>
         </ul>
+        <div class="progress-bar volumeslider">
+            <a onClick="toggleMute()"><img id="volumeButton" src="volume-min.svg"></a>
+            <input type="range" min="0" max="100" value="0" class="fullscreen" id="myVolume">
+        </div>
         
         
     </div>
@@ -102,7 +113,7 @@
     } 
     else 
     {
-        image.addEventListener('load', function() {
+        img.addEventListener('load', function() {
             const color = colorThief.getColor(img);
             const rgbColor = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
             document.body.style.backgroundColor = rgbColor;
