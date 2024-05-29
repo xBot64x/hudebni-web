@@ -4,7 +4,7 @@
 <head>
     <title>Hudba web - fullscreen</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <meta charset="UTF-8">
     <meta name="description" content="hudbaweb">
     <meta name="keywords" content="music, lil vidlák">
@@ -73,8 +73,8 @@
             </li>
             <li style="display: inline-block;">
                 <div class="buttons">
-                    <a onClick="togglePlay()"><img id="playButton" src="play.png"></a>
-                    <a onClick="toggleLoop()"><img id="loopButton" src="nonewloop.svg"></a>
+                    <a onClick="togglePlay()"><img id="playButton" src="images/play.png"></a>
+                    <a onClick="toggleLoop()"><img id="loopButton" src="images/nonewloop.svg"></a>
                 </div>  
             </li>
             <li style="float:right;padding-right: 5px;">
@@ -82,7 +82,7 @@
             </li>
         </ul>
         <div class="progress-bar volumeslider">
-            <a onClick="toggleMute()"><img id="volumeButton" src="volume-min.svg"></a>
+            <a onClick="toggleMute()"><img id="volumeButton" src="images/volume-min.svg"></a>
             <input type="range" min="0" max="100" value="0" class="fullscreen" id="myVolume">
         </div>
         
@@ -96,7 +96,7 @@
 </div>
 
 
-<script src="script.js"></script>
+<script src="js/script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>

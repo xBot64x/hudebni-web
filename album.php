@@ -4,7 +4,7 @@
 <head>
 	<title>Hudba web</title>
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
-	<link rel="stylesheet" href="styles.css">
+	<link rel="stylesheet" href="css/styles.css">
 	<meta charset="UTF-8">
 	<meta name="description" content="hudbaweb">
 	<meta name="keywords" content="music, lil vidlák">
@@ -69,7 +69,7 @@
 			echo '</div>';
 			echo '<div style="margin-left: 3%;">';
 				echo '<h2>' . htmlspecialchars($album) . '</h2>';
-				echo '<h3>' . htmlspecialchars($artist) . '</h3>';
+				echo '<a href="artist.php?id=' . htmlspecialchars($artist) . '"><h3>' . htmlspecialchars($artist) . '</h3></a>';
 				echo '<p>'. htmlspecialchars($genre) .' · ' . htmlspecialchars($releaseyear) . '</p>';
 			echo '</div>';
 		echo '</div>';
@@ -136,7 +136,7 @@
 	</div>
 	<?php require 'footer.php';?>
     
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 </body>

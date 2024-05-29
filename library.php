@@ -4,7 +4,7 @@
 <head>
     <title>Knihovna</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <meta charset="UTF-8">
     <meta name="description" content="hudbaweb">
     <meta name="keywords" content="music, lil vidlák">
@@ -86,8 +86,8 @@
     </div>
     <?php require 'footer.php';?>
 
-    <script src="script.js"></script>
-    <script src="library.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/library.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 </body>

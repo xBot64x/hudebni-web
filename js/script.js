@@ -114,7 +114,7 @@ function changeMusic(source) {
 
         // Change play button icon
       var playButtonImg = document.getElementById("playButton");
-      playButtonImg.src = "pause.png";
+      playButtonImg.src = "../images/pause.png";
     },
     onError: function(error) {
       console.log(':(', error.type, error.info);
@@ -157,12 +157,12 @@ function toggleLoop() {
 
 function play() {
   audioPlayer.play();
-  playButton.src = "pause.png";
+  playButton.src = "../images/pause.png";
 }
 
 function pause() {
   audioPlayer.pause();
-  playButton.src = "play.png";
+  playButton.src = "../images/play.png";
 }
 
 function loop() {

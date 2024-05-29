@@ -263,7 +263,7 @@ li button {
 }
 
 .skladbadiv .play-icon{
-    background: url('white-play-icon.svg') no-repeat;
+    background: url('../images/white-play-icon.svg') no-repeat;
     transform: translate(38px, 0px);
 }
 
@@ -301,15 +301,15 @@ li button {
 }
 
 .skladbadiv .like-icon{
-    background-image: url("white-like-icon.svg");
+    background-image: url("../images/white-like-icon.svg");
 }
 
 .skladbadiv .download-icon{
-    background-image: url("save.png");
+    background-image: url("../images/save.png");
 }
 
 .skladbadiv .like-icon.liked{
-    background-image: url("white-liked-icon.svg");
+    background-image: url("../images/white-liked-icon.svg");
 }
 
 .nazevskladbyspan{
@@ -362,7 +362,7 @@ div.desc {
 .play-icon {
     position: absolute;
     transform: translate(10px, -53px);
-    background: url('play-icon.svg') no-repeat;
+    background: url('../images/play-icon.svg') no-repeat;
     width: 40px;
     height: 40px;
     background-size: cover;
@@ -379,7 +379,7 @@ div.desc {
     position: absolute;
     right: 10px;
     transform: translate(0px, -53px);
-    background: url('like-icon.svg') no-repeat; /* Default like icon */
+    background: url('../images/like-icon.svg') no-repeat; /* Default like icon */
     width: 40px;
     height: 40px;
     background-size: cover;
@@ -391,14 +391,14 @@ div.desc {
 
 
 .like-icon.liked {
-    background-image: url('liked-icon.svg'); /* Liked icon */
+    background-image: url('../images/liked-icon.svg'); /* Liked icon */
 }
 
 .download-icon {
     position: absolute;
     right: 10px;
     transform: translate(0px, -98px);
-    background: url('download-icon.png') no-repeat;
+    background: url('../images/download-icon.png') no-repeat;
     width: 40px;
     height: 40px;
     background-size: cover;
@@ -606,15 +606,15 @@ input[type="range"]:focus::-moz-range-progress {
 }
 
 .controls .like-icon{
-    background-image: url("white-like-icon.svg");
+    background-image: url("../images/white-like-icon.svg");
 }
 
 .controls .like-icon.liked{
-    background-image: url("white-liked-icon.svg");
+    background-image: url("../images/white-liked-icon.svg");
 }
 
 .controls .download-icon{
-    background-image: url("white-download-icon.png");
+    background-image: url("../images/white-download-icon.png");
 }
 
 .controls .download-icon, .controls .like-icon, .controls #playButton, .controls #loopButton{

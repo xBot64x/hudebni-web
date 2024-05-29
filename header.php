@@ -8,17 +8,17 @@
 <body>
     <ul class="sidebar">
         <li><input type="text" placeholder="najdu tam co neznám"></li>
-        <li><a href="index.php"><img src="home.png">Domů</a></li>
-        <li><a href="skladby.php"><img src="list.png">Skladby</a></li>
-        <li><a id="fullscreenLink" href="#"><img src="squares.png">Fullscreen</a></li>
-        <li><a href="library.php"><img src="white-liked-icon.svg">Knihovna</a></li>
-        <li><a href="info.php"><img src="info.png">Info</a></li>
+        <li><a href="index.php"><img src="../images/home.png">Domů</a></li>
+        <li><a href="skladby.php"><img src="../images/list.png">Skladby</a></li>
+        <li><a id="fullscreenLink" href="#"><img src="../images/squares.png">Fullscreen</a></li>
+        <li><a href="library.php"><img src="../images/white-liked-icon.svg">Knihovna</a></li>
+        <li><a href="info.php"><img src="../images/info.png">Info</a></li>
     </ul>
 
     <ul class="topbar">
-        <li><img class="blur2" src="play-blur.png">
-            <a onClick="togglePlay()"><img id="playButton" src="play.png"></a>
-            <a onClick="toggleLoop()"><img id="loopButton" src="nonewloop.svg"></a>
+        <li><img class="blur2" src="../images/play-blur.png">
+            <a onClick="togglePlay()"><img id="playButton" src="../images/play.png"></a>
+            <a onClick="toggleLoop()"><img id="loopButton" src="../images/nonewloop.svg"></a>
         </li>
         <li><img id="albumCover" src=""></li>
         <li id="songinfoli" style="margin-top: 15px;">
