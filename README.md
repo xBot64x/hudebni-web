@@ -5,7 +5,7 @@
 
 # Hudba Web
 
-webová stránka se záměrem navrhnout a poslouchat svělou royalty free hudbu ve stylovém a přehledném prostředí
+webová stránka se záměrem navrhnout posluchači svělou royalty free hudbu ve stylovém a přehledném prostředí
 ## použité technologie
 
 ### html
@@ -35,7 +35,7 @@ vzhled a zjednodušení používání stránky, animace
 
 ## Používán
 
-Tento web je používán následujícími:
+Tento web používají:
 
 - Lebron James
 - Lil Vidlák

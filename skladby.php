@@ -48,6 +48,8 @@
                 $coverImage = 'placeholder.png';
             }
             
+            
+
             $link = substr($song, 6);
 
             // Generate HTML for each song
@@ -60,10 +62,20 @@
             echo '<div class="like-icon" onclick="toggleLike(this)"></div>';
             echo '<img class="coverskladba" src="' . $coverImage . '">';
             echo '<div class="play-icon" onclick="changeMusic(\'music/' . htmlspecialchars(basename($song)) . '\')"></div>';
-            echo '<span class="nazevskladbyspan">' . htmlspecialchars($title) . '</span>';
-            echo '<span class="artistspan">' . htmlspecialchars($artist) . '</span>';
-            echo '<span>' . htmlspecialchars($album) . '</span>';
-            echo '<span>' . htmlspecialchars($playtime) . '</span>';
+
+            echo '<span class="nazevskladbyspan pc">' . htmlspecialchars($title) . '</span>';
+            echo '<a class="pc" href="artist.php?id=' . htmlspecialchars($artist) . '"><span class="artistspan">' . htmlspecialchars($artist) . '</span></a>';
+            echo '<a class="pc" href="album.php?id=' . htmlspecialchars($album) . '"><span>' . htmlspecialchars($album) . '</span></a>';
+
+            echo '<div class="mobil">';
+                echo '<span class="nazevskladbyspan">' . htmlspecialchars($title) . '</span>';
+                echo '<div>';
+                    echo '<a href="artist.php?id=' . htmlspecialchars($artist) . '"><span class="artistspan">' . htmlspecialchars($artist) . '</span></a> · ';
+                    echo '<a href="album.php?id=' . htmlspecialchars($album) . '"><span>' . htmlspecialchars($album) . '</span></a>';
+                echo '</div>';
+            echo '</div>';
+
+            echo '<span class="playtime">' . htmlspecialchars($playtime) . '</span>';
             echo '<a href="' . htmlspecialchars($song) . '" download="' . htmlspecialchars($title) . ' - ' . htmlspecialchars($artist) . '"><div class="download-icon"></div></a>';
             echo '</div>';
 
