@@ -64,7 +64,7 @@
 				echo '</div>';
 			echo '</div>';
 			echo '<div style="margin-left: 3%;">';
-				echo '<h1>' . htmlspecialchars($artist) . '</h1>';
+				echo '<h1 id="artistid">' . htmlspecialchars($artist) . '</h1>';
 			echo '</div>';
 		echo '</div>';
 		?>
@@ -173,7 +173,7 @@
 					echo '<img class="coverskladba" src="' . $coverImage . '">';
 					echo '<div class="play-icon" onclick="changeMusic(\'music/' . htmlspecialchars(basename($song)) . '\')"></div>';
 		
-					echo '<span class="nazevskladbyspan pc">' . htmlspecialchars($title) . '</span>';
+					echo '<a onclick="changeMusic(\'music/' . htmlspecialchars(basename($song)) . '\')"><span class="nazevskladbyspan pc">' . htmlspecialchars($title) . '</span></a>';
 					echo '<a class="pc" href="album.php?id=' . htmlspecialchars($album) . '"><span>' . htmlspecialchars($album) . '</span></a>';
 					echo '<span class="pc"></span>';
 

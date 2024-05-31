@@ -10,6 +10,7 @@
         <li><input type="text" placeholder="najdu tam co neznám"></li>
         <li><a href="index.php"><img src="../images/home.png">Domů</a></li>
         <li><a href="skladby.php"><img src="../images/list.png">Skladby</a></li>
+        <li><a href="alba.php"><img src="../images/list.png">Alba</a></li>
         <li><a id="fullscreenLink" href="#"><img src="../images/squares.png">Fullscreen</a></li>
         <li><a href="library.php"><img src="../images/white-liked-icon.svg">Knihovna</a></li>
         <li><a href="info.php"><img src="../images/info.png">Info</a></li>
@@ -38,6 +39,9 @@
         </li>
     </ul>
     <ul class="progress-bar" style="top:-35px;">
+        <li>
+            <!--<img src="images/volume-min.svg">-->
+        </li>
         <li>
             <a id="sliderMouseCheck">
                 <input type="range" min="0" max="100" value="0" class="volumeSlider" id="myVolume">

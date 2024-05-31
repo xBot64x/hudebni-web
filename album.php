@@ -69,7 +69,7 @@
 			echo '</div>';
 			echo '<div style="margin-left: 3%;">';
 				echo '<h2>' . htmlspecialchars($album) . '</h2>';
-				echo '<a href="artist.php?id=' . htmlspecialchars($artist) . '"><h3>' . htmlspecialchars($artist) . '</h3></a>';
+				echo '<a id="artistid" href="artist.php?id=' . htmlspecialchars($artist) . '"><h3>' . htmlspecialchars($artist) . '</h3></a>';
 				echo '<p>'. htmlspecialchars($genre) .' · ' . htmlspecialchars($releaseyear) . '</p>';
 			echo '</div>';
 		echo '</div>';
@@ -122,7 +122,7 @@
 				echo '<div class="like-icon" onclick="toggleLike(this)"></div>';
 				echo '<span class="cislo">' . htmlspecialchars($pass + 1) . '</span>';
 				echo '<div class="play-icon" onclick="changeMusic(\'music/' . htmlspecialchars(basename($song)) . '\')"></div>';
-				echo '<span class="nazevskladbyspan">' . htmlspecialchars($title) . '</span>';
+				echo '<a onclick="changeMusic(\'music/' . htmlspecialchars(basename($song)) . '\')"><span class="nazevskladbyspan pc">' . htmlspecialchars($title) . '</span></a>';
 				echo '<span>' . htmlspecialchars($playtime) . '</span>';
 				echo '<a href="' . htmlspecialchars($song) . '" download="' . htmlspecialchars($title) . ' - ' . htmlspecialchars($artist) . '"><div class="download-icon"></div></a>';
 				echo '</div>';

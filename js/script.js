@@ -4,8 +4,12 @@ var volumeSlider = document.getElementById("myVolume");
 var loopvar = false;
 
 //set volume from local storage
+if (localStorage.getItem("volume") === null) {
+  localStorage.setItem("volume", 1);
+}
 volumeSlider.value = localStorage.getItem("volume") * 100;
 audioPlayer.volume = localStorage.getItem("volume");
+
 
 document.addEventListener('DOMContentLoaded', function() {
   // Retrieve liked songs from localStorage
@@ -27,8 +31,15 @@ document.addEventListener('DOMContentLoaded', function() {
         var artist = galleryItem.querySelector('.artistspan').textContent;
       } 
       catch (error) {
-        var title = document.getElementById('titlef').innerHTML;
-        var artist = document.getElementById('artistf').innerHTML;
+        try {
+          var title = document.getElementById('titlef').innerHTML;
+          var artist = document.getElementById('artistf').innerHTML;
+        } 
+        catch (error) {
+          var galleryItem = likeButton.closest('.skladbadiv');
+          var title = galleryItem.querySelector('.nazevskladbyspan').textContent;
+          var artist = document.getElementById('artistid').textContent;
+        }
       }
     }
 
@@ -166,12 +177,12 @@ function pause() {
 }
 
 function loop() {
-  loopButton.src = "newloop.svg";
+  loopButton.src = "../images/newloop.svg";
   loopvar = true;
 }
 
 function noloop() {
-  loopButton.src = "nonewloop.svg";
+  loopButton.src = "../images/nonewloop.svg";
   loopvar = false;
 }
 
@@ -262,8 +273,15 @@ function likeSong(likeButton) {
       var artist = galleryItem.querySelector('.artistspan').textContent;
     } 
     catch (error) {
-      var title = document.getElementById('titlef').innerHTML;
-      var artist = document.getElementById('artistf').innerHTML;
+      try {
+        var title = document.getElementById('titlef').innerHTML;
+        var artist = document.getElementById('artistf').innerHTML;
+      } 
+      catch (error) {
+        var galleryItem = likeButton.closest('.skladbadiv');
+        var title = galleryItem.querySelector('.nazevskladbyspan').textContent;
+        var artist = document.getElementById('artistid').textContent;
+      }
     }
   }
   
@@ -290,8 +308,15 @@ function unlikeSong(likeButton) {
       var artist = galleryItem.querySelector('.artistspan').textContent;
     } 
     catch (error) {
-      var title = document.getElementById('titlef').innerHTML;
-      var artist = document.getElementById('artistf').innerHTML;
+      try {
+        var title = document.getElementById('titlef').innerHTML;
+        var artist = document.getElementById('artistf').innerHTML;
+      } 
+      catch (error) {
+        var galleryItem = likeButton.closest('.skladbadiv');
+        var title = galleryItem.querySelector('.nazevskladbyspan').textContent;
+        var artist = document.getElementById('artistid').textContent;
+      }
     }
   }
 
