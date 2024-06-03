@@ -51,7 +51,7 @@
 
             $link = substr($song, 6);
 
-            // Generate HTML for each song
+            /// Generate HTML for each song
             if ($pass % 2 == 0) {
                 echo '<div class="skladbadiv">';
             }
@@ -62,7 +62,7 @@
             echo '<img class="coverskladba" src="' . $coverImage . '">';
             echo '<div class="play-icon" onclick="changeMusic(\'music/' . htmlspecialchars(basename($song)) . '\')"></div>';
 
-            echo '<a onclick="changeMusic(\'music/' . htmlspecialchars(basename($song)) . '\')"><span class="nazevskladbyspan pc">' . htmlspecialchars($title) . '</span></a>';
+            echo '<a class="pc" onclick="changeMusic(\'music/' . htmlspecialchars(basename($song)) . '\')"><span class="nazevskladbyspan">' . htmlspecialchars($title) . '</span></a>';
             echo '<a class="pc" href="artist.php?id=' . htmlspecialchars($artist) . '"><span class="artistspan">' . htmlspecialchars($artist) . '</span></a>';
             echo '<a class="pc" href="album.php?id=' . htmlspecialchars($album) . '"><span>' . htmlspecialchars($album) . '</span></a>';
 

@@ -87,7 +87,7 @@ ul.topbar{
     padding: 0;
     overflow: hidden;
     margin-left: 280px;
-    background-color: rgba(29, 29, 29, 0.85);
+    background-color: rgba(29, 29, 29, 0.6);
     -webkit-backdrop-filter: blur(50px);
     backdrop-filter: blur(50px);
     z-index: 1000;
@@ -852,6 +852,10 @@ ul.gaps {
 
     .topbar li{
         float: left;
+    }
+
+    .time{
+        margin-top: -32px !important;
     }
     
     ul.progress-bar{

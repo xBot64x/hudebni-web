@@ -172,18 +172,19 @@
 					echo '<div class="like-icon" onclick="toggleLike(this)"></div>';
 					echo '<img class="coverskladba" src="' . $coverImage . '">';
 					echo '<div class="play-icon" onclick="changeMusic(\'music/' . htmlspecialchars(basename($song)) . '\')"></div>';
-		
-					echo '<a onclick="changeMusic(\'music/' . htmlspecialchars(basename($song)) . '\')"><span class="nazevskladbyspan pc">' . htmlspecialchars($title) . '</span></a>';
+
+					echo '<a class="pc" onclick="changeMusic(\'music/' . htmlspecialchars(basename($song)) . '\')"><span class="nazevskladbyspan">' . htmlspecialchars($title) . '</span></a>';
+					echo '<a class="pc" href="artist.php?id=' . htmlspecialchars($artist) . '"><span class="artistspan">' . htmlspecialchars($artist) . '</span></a>';
 					echo '<a class="pc" href="album.php?id=' . htmlspecialchars($album) . '"><span>' . htmlspecialchars($album) . '</span></a>';
-					echo '<span class="pc"></span>';
 
 					echo '<div class="mobil">';
 						echo '<span class="nazevskladbyspan">' . htmlspecialchars($title) . '</span>';
 						echo '<div>';
+							echo '<a href="artist.php?id=' . htmlspecialchars($artist) . '"><span class="artistspan">' . htmlspecialchars($artist) . '</span></a> · ';
 							echo '<a href="album.php?id=' . htmlspecialchars($album) . '"><span>' . htmlspecialchars($album) . '</span></a>';
 						echo '</div>';
 					echo '</div>';
-		
+
 					echo '<span class="playtime">' . htmlspecialchars($playtime) . '</span>';
 					echo '<a href="' . htmlspecialchars($song) . '" download="' . htmlspecialchars($title) . ' - ' . htmlspecialchars($artist) . '"><div class="download-icon"></div></a>';
 					echo '</div>';
@@ -192,9 +193,11 @@
 				}
 			}
 			?>
+
 		</div>
 
 	</div>
+	<!-- megagay  https://www.youtube.com/watch?v=FI7DdOxCLaI -->
 	<?php require 'footer.php';?>
     
     <script src="js/script.js"></script>

@@ -122,7 +122,7 @@
 				echo '<div class="like-icon" onclick="toggleLike(this)"></div>';
 				echo '<span class="cislo">' . htmlspecialchars($pass + 1) . '</span>';
 				echo '<div class="play-icon" onclick="changeMusic(\'music/' . htmlspecialchars(basename($song)) . '\')"></div>';
-				echo '<a onclick="changeMusic(\'music/' . htmlspecialchars(basename($song)) . '\')"><span class="nazevskladbyspan pc">' . htmlspecialchars($title) . '</span></a>';
+				echo '<a onclick="changeMusic(\'music/' . htmlspecialchars(basename($song)) . '\')"><span class="nazevskladbyspan">' . htmlspecialchars($title) . '</span></a>';
 				echo '<span>' . htmlspecialchars($playtime) . '</span>';
 				echo '<a href="' . htmlspecialchars($song) . '" download="' . htmlspecialchars($title) . ' - ' . htmlspecialchars($artist) . '"><div class="download-icon"></div></a>';
 				echo '</div>';

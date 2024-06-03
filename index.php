@@ -2,11 +2,11 @@
 <html>
 
 <head>
-    <title>Hudba web</title>
+    <title>Hudba web | skvělá muzika zadarmo</title>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="css/styles.css">
     <meta charset="UTF-8">
-    <meta name="description" content="hudbaweb">
+    <meta name="description" content="Nalezněte skvělé skladby pro komerční i hobby použití. Užjte si stylové prostředí Hudba webu a poslouchejte své oblíbené umělce.">
     <meta name="keywords" content="music, lil vidlák">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -14,10 +14,12 @@
 <body>
     <?php require 'header.php';?>
     <div class="main">
+        <a href="alba.php">
         <div style="display:flex">
             <h1>Alba</h1>
             <img src="../images/sipka.svg" style="width: 32px;">
         </div>
+        </a>
         
         <div style="overflow:auto">
         <?php
@@ -119,7 +121,12 @@
         ?>
         </div>
 
-        <h1>Skladby</h1>
+        <a href="skladby.php">
+        <div style="display:flex">
+            <h1>Skladby</h1>
+            <img src="../images/sipka.svg" style="width: 32px;">
+        </div>
+        </a>
         <div style="overflow:auto">
         <?php
         // Include Composer's autoloader
@@ -167,7 +174,7 @@
             echo '<img class="coverskladba" src="' . $coverImage . '">';
             echo '<div class="play-icon" onclick="changeMusic(\'music/' . htmlspecialchars(basename($song)) . '\')"></div>';
 
-            echo '<a onclick="changeMusic(\'music/' . htmlspecialchars(basename($song)) . '\')"><span class="nazevskladbyspan pc">' . htmlspecialchars($title) . '</span></a>';
+            echo '<a class="pc" onclick="changeMusic(\'music/' . htmlspecialchars(basename($song)) . '\')"><span class="nazevskladbyspan">' . htmlspecialchars($title) . '</span></a>';
             echo '<a class="pc" href="artist.php?id=' . htmlspecialchars($artist) . '"><span class="artistspan">' . htmlspecialchars($artist) . '</span></a>';
             echo '<a class="pc" href="album.php?id=' . htmlspecialchars($album) . '"><span>' . htmlspecialchars($album) . '</span></a>';
 

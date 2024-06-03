@@ -27,7 +27,7 @@
                 <b><span id="songTitle"></span></b><br><span id="artist"></span>
             </div>
         </li>
-        <li style="float: right; margin-top: 22px;">
+        <li class="time" style="float: right; margin-top: 22px;">
             <span id="currentTime2">0:00</span> / <span id="remainingTime">0:00</span>
         </li>
     </ul>
