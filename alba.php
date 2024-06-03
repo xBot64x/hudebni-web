@@ -6,7 +6,7 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="css/styles.css">
     <meta charset="UTF-8">
-    <meta name="description" content="hudbaweb">
+    <meta name="description" content="Nalezněte skvělé skladby pro komerční i hobby použití. Užjte si stylové prostředí Hudba webu a poslouchejte své oblíbené umělce.">
     <meta name="keywords" content="music, lil vidlák">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -19,7 +19,7 @@
             <img src="../images/sipka.svg" style="width: 32px;">
         </div>
         
-        <div style="overflow:auto">
+        <div style="overflow:hidden">
         <?php
         // Include Composer's autoloader
         require_once 'vendor/autoload.php';

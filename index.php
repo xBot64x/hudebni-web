@@ -21,7 +21,7 @@
         </div>
         </a>
         
-        <div style="overflow:auto">
+        <div style="overflow:hidden">
         <?php
         // Include Composer's autoloader
         require_once 'vendor/autoload.php';
@@ -79,7 +79,7 @@
         </div>
 
         <h1>Autoři</h1>
-        <div style="overflow:auto">
+        <div style="overflow:hidden">
         <?php
         require_once 'vendor/autoload.php';
         $musicFolder = 'music';
