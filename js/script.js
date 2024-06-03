@@ -1,7 +1,12 @@
 var audioPlayer = document.getElementById("audioPlayer");
 var slider = document.getElementById("myRange");
 var volumeSlider = document.getElementById("myVolume");
-var loopvar = false;
+
+if (localStorage.getItem("loopvar") === null) {
+  localStorage.setItem("loopvar", "false");
+}
+
+
 
 //set volume from local storage
 if (localStorage.getItem("volume") === null) {
@@ -48,12 +53,21 @@ document.addEventListener('DOMContentLoaded', function() {
       return song.title === title && song.artist === artist;
     });
     
-
     // If liked, add 'liked' class to the like button
     if (isLiked) {
       likeButton.classList.add('liked');
     }
   });
+
+  //check if song was previosly playing and check looping
+  if(localStorage.getItem("loopvar") == "true"){
+    loop();
+  }
+
+  if(localStorage.getItem("playing") == "true"){
+    changeMusic(localStorage.getItem("lastsong"));
+    audioPlayer.currentTime = localStorage.getItem("sliderprogress");
+  }
 });
 
 audioPlayer.addEventListener('timeupdate', function(){
@@ -61,10 +75,11 @@ audioPlayer.addEventListener('timeupdate', function(){
   slider.max = sliderMax;
   var percentage = Math.floor(audioPlayer.currentTime);
   slider.value = percentage;
+  localStorage.setItem("sliderprogress", percentage);
   currentTime2.textContent = convertStoMs(audioPlayer.currentTime);
   remainingTime.textContent = "-" + convertStoMs(Math.floor(audioPlayer.duration) - Math.floor(audioPlayer.currentTime));
 
-  if(percentage == sliderMax && loopvar == true){
+  if(percentage == sliderMax && localStorage.getItem("loopvar") == true){
     slider.value = 0;
     play();
   }
@@ -87,7 +102,8 @@ volumeSlider.addEventListener('input', function() {
 
 function changeMusic(source) {  
   audioPlayer.src = "../" + source;
-  audioPlayer.play();
+  localStorage.setItem("lastsong",source)
+  play();
   fullscreenLink.href = `fullscreen.php?song=${encodeURIComponent(source.substring(6))}`;
   fullscreenLinkfooter.href = `fullscreen.php?song=${encodeURIComponent(source.substring(6))}`;
 
@@ -117,15 +133,6 @@ function changeMusic(source) {
 
       var artistSpan = document.getElementById('artist');
       artistSpan.textContent = tag.tags.artist
-
-      /*
-      document.querySelector("#album").textContent = tag.tags.album
-      document.querySelector("#genre").textContent = tag.tags.genre
-      */
-
-        // Change play button icon
-      var playButtonImg = document.getElementById("playButton");
-      playButtonImg.src = "../images/pause.png";
     },
     onError: function(error) {
       console.log(':(', error.type, error.info);
@@ -159,31 +166,45 @@ function togglePlay() {
 }
 
 function toggleLoop() {
-  if (loopvar == false) {
+  if (localStorage.getItem("loopvar") == "false") {
     loop();
   } else {
     noloop();
+    console.log(localStorage.getItem("loopvar"))
   }
 }
 
 function play() {
-  audioPlayer.play();
+  var promise = audioPlayer.play();
+
+  if (promise !== undefined) {
+    promise.then(_ => {
+      // Autoplay started!
+    }).catch(error => {
+      alert("Prosím povolte automatické přehrávání ve vašem prohlížeči v levém horním rohu pro správnou funkci webu.");
+      audioPlayer.play();
+    });
+  }
+
+
   playButton.src = "../images/pause.png";
+  localStorage.setItem("playing", "true")
 }
 
 function pause() {
   audioPlayer.pause();
   playButton.src = "../images/play.png";
+  localStorage.setItem("playing", "false")
 }
 
 function loop() {
   loopButton.src = "../images/newloop.svg";
-  loopvar = true;
+  localStorage.setItem("loopvar", "true")
 }
 
 function noloop() {
   loopButton.src = "../images/nonewloop.svg";
-  loopvar = false;
+  localStorage.setItem("loopvar", "false")
 }
 
 // vyhledávání na stránce (search)
