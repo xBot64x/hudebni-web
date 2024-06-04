@@ -23,7 +23,6 @@ vzhled a zjednodušení používání stránky, animace
 - dynamické upravování html a css
 - ukládání a načítání oblíbených skladeb
 ## Funkce
-
 - vyhledávání skladeb
 - poslech mp3
 - Fullscreen režim
@@ -31,7 +30,7 @@ vzhled a zjednodušení používání stránky, animace
 - Stylový vzhled
 - ukládání oblíbených skladeb
 - stáhnutí mp3
-
+- bohužel kvůli problémy s infinity free nejsou na webu všechny skladby
 
 ## Používán
 
