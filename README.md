@@ -30,7 +30,6 @@ vzhled a zjednodušení používání stránky, animace
 - Stylový vzhled
 - ukládání oblíbených skladeb
 - stáhnutí mp3
-- bohužel kvůli problémy s infinity free nejsou na webu všechny skladby
 
 ## Používán
 
