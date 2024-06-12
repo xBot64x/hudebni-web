@@ -1,6 +1,6 @@
 
 ### http://hudbaweb.jednoduse.cz/
-![Logo](https://cdn.discordapp.com/attachments/1059406496846331957/1245477994923823135/velke_logo.png?ex=6658e545&is=665793c5&hm=60bb28f278e1002859e7c74d8d45576b4d45955a621500a1aa443701bc0d2833&)
+![Logo](https://cdn.discordapp.com/attachments/1059406496846331957/1245477994923823135/velke_logo.png?ex=666ab185&is=66696005&hm=a8744e2823d3d98013695b003c44fa965f0a477747ba2be3670a15bafa036de6&)
 
 
 # Hudba Web
