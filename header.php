@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audio Player</title>
-</head>
 <body>
     <ul class="sidebar">
         <li><input type="text" placeholder="najdu tam co neznám"></li>
@@ -53,4 +46,3 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.9.5/jsmediatags.min.js"></script>
 </body>
-</html>
