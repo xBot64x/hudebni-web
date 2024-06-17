@@ -6,6 +6,7 @@
 # Hudba Web
 
 powerpoint: https://sstebrnocz-my.sharepoint.com/:p:/g/personal/58819knize_student_sstebrno_cz/EQznt6mtg5lArOvAc8H_2FABeoHSnG7fiiWLxslBTc19dg?e=JS3shr
+
 webová stránka se záměrem navrhnout posluchači svělou royalty free hudbu ve stylovém a přehledném prostředí
 ## použité technologie
 
