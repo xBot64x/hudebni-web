@@ -1,9 +1,11 @@
 
 ### http://hudbaweb.jednoduse.cz/
-![Logo](https://cdn.discordapp.com/attachments/1059406496846331957/1245477994923823135/velke_logo.png?ex=666ab185&is=66696005&hm=a8744e2823d3d98013695b003c44fa965f0a477747ba2be3670a15bafa036de6&)
+![Logo](https://i.imgur.com/VamFvxd.png)
 
 
 # Hudba Web
+
+powerpoint: https://sstebrnocz-my.sharepoint.com/:p:/g/personal/58819knize_student_sstebrno_cz/EQznt6mtg5lArOvAc8H_2FABeoHSnG7fiiWLxslBTc19dg?e=JS3shr
 
 webová stránka se záměrem navrhnout posluchači svělou royalty free hudbu ve stylovém a přehledném prostředí
 ## použité technologie
@@ -30,7 +32,6 @@ vzhled a zjednodušení používání stránky, animace
 - Stylový vzhled
 - ukládání oblíbených skladeb
 - stáhnutí mp3
-- bohužel kvůli problémy s infinity free nejsou na webu všechny skladby
 
 ## Používán
 
