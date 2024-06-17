@@ -79,7 +79,7 @@ audioPlayer.addEventListener('timeupdate', function(){
   currentTime2.textContent = convertStoMs(audioPlayer.currentTime);
   remainingTime.textContent = "-" + convertStoMs(Math.floor(audioPlayer.duration) - Math.floor(audioPlayer.currentTime));
 
-  if(percentage == sliderMax && localStorage.getItem("loopvar") == true){
+  if(percentage == sliderMax && localStorage.getItem("loopvar") == "true"){
     slider.value = 0;
     play();
   }

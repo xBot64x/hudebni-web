@@ -13,6 +13,10 @@
 <body>
     <?php require 'header.php';?>
     <div class="main">
+        <h2>kontakt</h2>
+        <a href="mailto:Bot64@proton.me">Bot64@proton.me</a>
+
+
         <h2>Důležité info pro skladby od interpreta Tobu:</h2>
 
         <div class="block">
