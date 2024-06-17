@@ -888,7 +888,7 @@ ul.gaps {
     }
    
     #songinfoli {
-        width:calc(100% - 320px); 
+        width:calc(100% - 289px); 
         overflow:hidden; 
         white-space:nowrap;
         display:flex;
