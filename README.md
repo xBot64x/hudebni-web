@@ -1,6 +1,6 @@
 
 ### http://hudbaweb.jednoduse.cz/
-![Logo](https://imgur.com/a/R6VtBEp)
+![Logo](https://i.imgur.com/VamFvxd.png)
 
 
 # Hudba Web
